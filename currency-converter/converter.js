@@ -35,6 +35,7 @@ document.querySelector('.arrow').addEventListener('click', convertCurrency);
 document.getElementById('fromCurrency').addEventListener('change', function() {
   const selectedCurrency = this.value;
   document.querySelector('.base .name').innerText = currencyNames[selectedCurrency];
+  convertCurrency();
 });
 
 document.getElementById('toCurrency').addEventListener('change', function() {
