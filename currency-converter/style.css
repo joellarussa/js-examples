@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Noto+Sans|Roboto+Mono:300');
+@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
+
+/* Resets */
+.form-select {
+    padding: 0;
+}
+
+/* Style */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fee2e2;
+}
+
+.convertor-card {
+    height: 80vmin;
+    width: 50vmin;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    border-radius: 2px;
+}
+
+.base,
+.converted {
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 4vmin;
+    position: relative;
+}
+
+.base {
+    flex-direction: column;
+    grid-row: 1 / 2;
+    padding-top: 2vmin;
+    padding-bottom: calc(17% + 2vmin);
+    background: #fc5154;
+    color: #fff;
+    border-top-left-radius: 2vmin;
+    border-top-right-radius: 2vmin;
+}
+
+.base::before {
+    content: '';
+    height: 17vmin;
+    width: 17vmin;
+    border-radius: 100%;
+    background-color: #fff;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%) rotate(-45deg);
+    z-index: 2;
+}
+
+.converted {
+    flex-direction: column-reverse;
+    grid-row: 2 / 3;
+    padding-top: calc(17% + 2vmin);
+    padding-bottom: 2vmin;
+    background: #fff;
+    color: #fc5154;
+    border-bottom-left-radius: 2vmin;
+    border-bottom-right-radius: 2vmin;
+}
+
+.converted::before {
+    content: '';
+    height: calc(17vmin + 2vmin);
+    width: calc(17vmin + 2vmin);
+    border-radius: 100%;
+    background-color: #fc5154;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    bottom: calc(50% + 1vmin);
+    transform: translateY(-50%) rotate(-45deg);
+    z-index: 1;
+}
+
+.name {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3vmin;
+    letter-spacing: 0.2em;
+}
+
+.value {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 11vmin;
+    letter-spacing: 0.04em;
+}
+
+.symbol {
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: -1.2vmin;
+    opacity: 0.7;
+}
+
+.abbr {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"]:focus {
+    background-color: transparent; /* Removes the background */
+    outline: none; /* Removes the default outline */
+    box-shadow: none; /* Removes the blue highlight border */
+    color: white;
+}
+
+input[type="number"]::placeholder {
+    color: white;
+    opacity: 1; /* Ensures the color is not faded */
+}
+
+.form-control {
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+.form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    position: relative;
+    text-align: center;
+    border: none;
+    font-size: 32px;
+}
+
+.form-select::after {
+    content: '\f078'; /* FontAwesome down arrow */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff; /* Adjust color as needed */
+    pointer-events: none;
+}
+
+.form-select:focus {
+    box-shadow: none; /* Removes any default focus shadow */
+    outline: none; /* Removes the default outline */
+}
+
+#fromCurrency {
+    background-color: #fc5154; /* Or any color that contrasts well */
+    color: #fff;
+}
+
+#fromCurrency option:checked {
+    background-color: #fff; /* Highlight background color */
+    color: #fc5154; /* Highlight text color */
+}
+
+#toCurrency {
+    background-color: #fff; /* White background for options */
+    color: #fc5154; /* Red text */
+}
+
+#toCurrency option:checked {
+    background-color: #fc5154; /* Highlight background color */
+    color: #fff; /* Highlight text color */
+}
+
+.arrow {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 8vmin;
+    font-weight: 900;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    z-index: 3;
+    color: #fc5154;
+    cursor: pointer; /* Makes the arrow clickable */
+    pointer-events: auto; /* Ensure it can be clicked */
+}
