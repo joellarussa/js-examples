@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1>
+            <span class="rock">Rock,</span>
+            <span class="paper">Paper,</span>
+            <span class="scissors">Scissors</span>
+        </h1>
+        <div class="btn-group mb-4" role="group" aria-label="Game Choices">
+            <button type="button" class="btn btn-primary" onclick="playGame('rock')">Rock</button>
+            <button type="button" class="btn btn-primary" onclick="playGame('paper')">Paper</button>
+            <button type="button" class="btn btn-primary" onclick="playGame('scissors')">Scissors</button>
+        </div>
+        <div id="result" class="alert alert-info" role="alert"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
